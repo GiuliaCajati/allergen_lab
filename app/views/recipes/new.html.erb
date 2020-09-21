@@ -1,0 +1,11 @@
+
+
+
+
+<%= form_for @recipe do |f| %>
+    <%= f.label :name, "Recipe Name" %>
+    <%= f.text_field :name %>
+    <%= f.label :user, "Author" %>
+    <%= f.text_field :user %>
+    <%= f.submit "New Recipe" %>
+<% end %>

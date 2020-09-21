@@ -1,0 +1,20 @@
+
+<%= form_tag recipes_path, method: "GET" do %>
+    <%= label_tag "Sort" %>
+    <%= radio_button_tag "sorted", 'true' %>
+    <%= label_tag "Not Sorted" %>
+    <%= radio_button_tag "sorted", 'false' %>
+    <%= submit_tag %>
+<% end %>
+
+<ul>
+    <% @recipes.each do |recipe|  %>
+    <li>
+    <%= link_to recipe.name, recipe_path(recipe.id) %> - <%= recipe.ingredients.size %>
+    </li>
+    <% end %> 
+</ul>
+
+
+<%= button_to "New Recipe", new_recipe_path, method: "get"  %>
+

@@ -6,9 +6,11 @@ class Ingredient < ApplicationRecord
 
     def self.sorted_by_allergies
         self.all.sort_by do |ingredient|
-            ingredient.allergies.size 
-        end 
+            ingredient.allergies.size
+        end.reverse
     end 
+
+
         #self.all.sort_by(ingredient.user.size) ?
 
 
